@@ -18,14 +18,9 @@ int minComputation(int size, int files[])
 
 	// Variable to count total Computation
 	int count = 0;
-
-	while (pq.size() > 1) {
-
-		// pop two smallest size element
-		// from the min heap
-		int first_smallest = pq.top();
-		pq.pop();
-		int second_smallest = pq.top();
+	
+	gjsighshgshg
+		lest = pq.top();
 		pq.pop();
 
 		int temp = first_smallest + second_smallest;
