@@ -1,3 +1,5 @@
+// Start of the program
+
 #include <bits/stdc++.h>
 using namespace std;
  
@@ -120,3 +122,5 @@ int main(void)
                    : cout << "Element is present at index " << result;
     return 0;
 }
+
+// End of the program
