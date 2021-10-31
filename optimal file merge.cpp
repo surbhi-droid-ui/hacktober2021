@@ -1,66 +1,82 @@
-// C++ program to implement
-// Optimal File Merge Pattern
+// C++ implementation to find the
+// longest subarray consisting of
+// only two values with difference K
 #include <bits/stdc++.h>
 using namespace std;
 
-// Function to find minimum computation
-int minComputation(int size, int files[])
+// Function to return the length
+// of the longest sub-array
+int longestSubarray(int arr[], int n,
+					int k)
 {
+	int i, j, Max = 1;
 
-	// Create a min heap
-	priority_queue<int, vector<int>, greater<int> > pq;
+	// Initialize set
+	set<int> s;
 
-	for (int i = 0; i < size; i++) {
+	for (i = 0; i < n - 1; i++) {
+		// Store 1st element of
+		// sub-array into set
+		s.insert(arr[i]);
 
-		// Add sizes to priorityQueue
-		pq.push(files[i]);
+		for (j = i + 1; j < n; j++) {
+			// Check absolute difference
+			// between two elements
+
+			if (abs(arr[i] - arr[j]) == 0
+				|| abs(arr[i] - arr[j]) == k) {
+
+				// If the new element is not
+				// present in the set
+				if (!s.count(arr[j])) {
+
+					// If the set contains
+					// two elements
+					if (s.size() == 2)
+						break;
+
+					// Otherwise
+					else
+						s.insert(arr[j]);
+				}
+			}
+			else
+				break;
+		}
+
+		if (s.size() == 2) {
+
+			// Update the maximum
+			// length
+			Max = max(Max, j - i);
+
+			// Remove the set
+			// elements
+			s.clear();
+		}
+		else
+			s.clear();
 	}
 
-	// Variable to count total Computation
-	int count = 0;
-	
-	//comment outthe 
-	Nishant does pretty weird stuff. Today, he wants to create a weird sequence.
-
-According to Nishant, a sequence A of length N is called weird if:
-
-N≥3
-2⋅Ai>Ai−1+Ai+1 ∀i∈{2,3,4....,N−1}
-Nishant wants to construct a long weird sequence to impress his weird friends, but there's a problem: he only knows how to count up to K, so the sequence can only contain integers in the range [1,K].
-
-Help Nishant determine the length of the longest weird sequence he can construct using only integers from 1 to K.
-		lest = pq.top();
-		pq.pop();
-
-		int temp = first_smallest + second_smallest;
-
-		// Add the current computations
-		// with the previous one's
-		count += temp;
-
-		// Add new combined file size
-		// to priority queue or min heap
-		pq.push(temp);
-	}
-	return count;
+	return Max;
 }
 
-// Driver code
+// Driver Code
 int main()
 {
+	int arr[] = { 1, 0, 2, 2, 5, 5, 5 };
 
-	// No of files
-	int n = 6;
+	int N = sizeof(arr)
+			/ sizeof(arr[0]);
+	int K = 1;
 
-	// 6 files with their sizes
-	int files[] = { 2, 3, 4, 5, 6, 7 };
+	int length = longestSubarray(
+		arr, N, K);
 
-	// Total no of computations
-	// do be done final answer
-	cout << "Minimum Computations = "
-		<< minComputation(n, files);
+	if (length == 1)
+		cout << -1;
+	else
+		cout << length;
 
 	return 0;
 }
-
-// This code is contributed by jaigoyal1328
