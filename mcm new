@@ -1,10 +1,30 @@
-* A naive recursive implementation that simply
-follows the above optimal substructure property */
-#include <bits/stdc++.h>
+//code chef solution
+#include <iostream>
+#include <math.h>
 using namespace std;
- 
-// Matrix Ai has dimension p[i-1] x p[i]
-// for i = 1..n
+#define ll long long int
+int main() {
+	ll T, i, j; ll k;
+	cin>>T;
+	while(T--)
+	{
+	    cin>>k;
+	    if(k==2) {cout<<3<<endl; continue;}
+	    ll t=0;
+	    k*=8;
+	    k++;
+	    k=(long long int)(ceil(sqrtl(k)));
+	    k--;
+                                                	   // t*=8;
+                                                	   // t++;
+                                                	   // t=ceil(sqrt(k));
+                                                	   // t--;
+                                                	    
+	    cout<<max(k, t)<<endl;
+	}
+	return 0;
+}
+
 int MatrixChainOrder(int p[], int i, int j)
 {
     if (i == j)
