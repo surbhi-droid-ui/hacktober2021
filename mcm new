@@ -1,8 +1,7 @@
 //code chef solution
 #include <iostream>
 #include <math.h>
-using namespace std;
-#define ll long long int
+ong int
 int main() {
 	ll T, i, j; ll k;
 	cin>>T;
