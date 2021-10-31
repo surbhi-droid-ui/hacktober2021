@@ -19,7 +19,16 @@ int minComputation(int size, int files[])
 	// Variable to count total Computation
 	int count = 0;
 	
-	gjsighshgshg
+	//comment outthe 
+	Nishant does pretty weird stuff. Today, he wants to create a weird sequence.
+
+According to Nishant, a sequence A of length N is called weird if:
+
+N≥3
+2⋅Ai>Ai−1+Ai+1 ∀i∈{2,3,4....,N−1}
+Nishant wants to construct a long weird sequence to impress his weird friends, but there's a problem: he only knows how to count up to K, so the sequence can only contain integers in the range [1,K].
+
+Help Nishant determine the length of the longest weird sequence he can construct using only integers from 1 to K.
 		lest = pq.top();
 		pq.pop();
 
