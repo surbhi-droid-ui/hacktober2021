@@ -1,14 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
  
-//define array globally
-const int N = 1e6 +4;
- 
-int a[N];
-int n;//array size
- 
-//element to be searched in array
-   int k;
+//define array gl
  
 bool check(int dig)
 {
