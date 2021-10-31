@@ -3,12 +3,7 @@
 #include <math.h>
 ong int
 int main() {
-	ll T, i, j; ll k;
-	cin>>T;
-	while(T--)
-	{
-	    cin>>k;
-	    if(k==2) {cout<<3<<endl; continue;}
+	\out<<3<<endl; continue;}
 	    ll t=0;
 	    k*=8;
 	    k++;
